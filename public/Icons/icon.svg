@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0">
+<defs>
+<symbol fill="none" viewBox="0 0 15 15" id="strike"><path fill="#000" fill-rule="evenodd" d="M5 3.25a.5.5 0 0 0-1 0V7.1H2.5a.4.4 0 1 0 0 .8H4v.65a3.5 3.5 0 1 0 7 0V7.9h1.5a.4.4 0 0 0 0-.8H11V3.25a.5.5 0 1 0-1 0V7.1H5V3.25ZM5 7.9v.65a2.5 2.5 0 0 0 5 0V7.9H5Z" clip-rule="evenodd"></path></symbol>
+<symbol viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote" id="quote"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></symbol>
+<symbol fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pilcrow" id="paragraph"><path d="M13 4v16M17 4v16M19 4H9.5a4.5 4.5 0 0 0 0 9H13"></path></symbol>
+<symbol viewBox="0 0 24 24" id="italic"><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 3h10M4 21h10m1-18L9 21"></path></symbol>
+<symbol fill="none" viewBox="0 0 24 24" id="bold"><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 12h6.5a4.5 4.5 0 1 0 0-9H6v9Zm0 0h7.5a4.5 4.5 0 1 1 0 9H6v-9Z"></path></symbol>
+</defs>
+</svg>
