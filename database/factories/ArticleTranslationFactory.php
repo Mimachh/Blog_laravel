@@ -17,7 +17,7 @@ class ArticleTranslationFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "description" => $this->faker->sentence,
         ];
     }
 }

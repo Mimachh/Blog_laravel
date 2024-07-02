@@ -17,10 +17,12 @@ class StoreArticleRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'isActive' => ['required', 'boolean'],
             'category_id' => ['required', 'exists:categories,id'],
             'translations' => ['required', 'array', 'min:1'],
             'translations.*.title' => ['nullable', 'string'],
             'translations.*.content' => ['nullable', 'string'],
+            'translations.*.description' => ['nullable', 'string'],
             'translations.*.slug' => ['nullable', 'string', 'unique:article_translations,slug'],
         ];
     }

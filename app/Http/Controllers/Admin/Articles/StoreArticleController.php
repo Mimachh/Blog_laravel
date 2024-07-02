@@ -16,6 +16,7 @@ class StoreArticleController extends Controller
         $user = auth()->user();
         $article = new Article();
         $article->category_id = $data['category_id'];
+        $article->isActive = $data['isActive'];
         $article->user_id = $user->id;
         $translations = $data['translations'];
         $article->fill($translations);

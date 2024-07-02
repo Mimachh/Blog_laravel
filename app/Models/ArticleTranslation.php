@@ -10,5 +10,5 @@ class ArticleTranslation extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $fillable = ['title', 'content', 'slug'];
+    protected $fillable = ['title', 'content', 'slug', "description"];
 }

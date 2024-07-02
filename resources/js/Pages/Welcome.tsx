@@ -1,11 +1,12 @@
-import { Link, Head, useForm } from "@inertiajs/react";
+import { Link, Head, useForm, usePage } from "@inertiajs/react";
 import { PageProps } from "@/types";
 
-import Tiptap from "@/Components/TipTap";
 import { useState } from "react";
 import parser from "html-react-parser";
 
 import { createLowlight } from "lowlight";
+import SwitchLocale from "@/Components/ui/switch-locale";
+import BlogLayout from "@/Layouts/BlogLayout";
 // const lowlight = createLowlight()
 
 // import css from 'highlight.js/lib/languages/css'
@@ -29,7 +30,13 @@ export default function Welcome({
     phpVersion,
 }: PageProps<{ laravelVersion: string; phpVersion: string }>) {
     const [desc, setDesc] = useState("");
-    const { data, setData, post, processing, errors } = useForm({
+    const {
+        data: formData,
+        setData,
+        post,
+        processing,
+        errors,
+    } = useForm({
         title: "",
         content: "",
     });
@@ -61,16 +68,25 @@ export default function Welcome({
     //         }
     //     },
     // };
+
+
     return (
         <>
             <Head title="Welcome" />
             <div className="mx-auto max-w-3xl">
                 <div className="mt-4">
-                    <Tiptap setDesc={setDesc} />
-
+                
+                    <Link href={route("articles.index")}>Articles</Link>
                     <div className="tiptap">{parser(desc)}</div>
                 </div>
             </div>
+
+        <div className="min-h-[300vh]">
+
+        </div>
         </>
     );
 }
+Welcome.layout = (page: React.ReactNode) => {
+    return <BlogLayout>{page}</BlogLayout>;
+};

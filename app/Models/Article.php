@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Astrotomic\Translatable\Translatable;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,10 +16,11 @@ class Article extends Model implements TranslatableContract
     public $useTranslationFallback = true;
     
 
-    public $translatedAttributes = ['title', 'content', 'slug'];
+    public $translatedAttributes = ['title', 'content', 'slug', "description"];
     protected $fillable = [
         'user_id',
         'category_id',
+        "isActive",
     ];
 
     public function user()
@@ -30,4 +32,10 @@ class Article extends Model implements TranslatableContract
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function scopeActive(Builder $query)
+    {
+        $query->where('isActive', 1);
+    }
+
 }

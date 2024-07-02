@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('article_translations', function (Blueprint $table) {
             $table->increments('id');
+           
             $table->string('locale')->index();
+
             $table->string('slug')->unique()->nullable();
             $table->string('title')->nullable();
             $table->longText('content')->nullable();
-            
+            $table->string('description')->nullable();
             $table->unique(['article_id', 'locale']);
 
             $table->unsignedBigInteger('article_id');

@@ -18,9 +18,10 @@ class UpdateArticleController extends Controller
 
         $user = auth()->user();
         $article->user_id = $user->id;
+
         $translations = $data['translations'];
         $article->category_id = $data['category_id'];
-
+        $article->isActive = $data['isActive'];
         $article->fill($translations);
 
         $article->save();

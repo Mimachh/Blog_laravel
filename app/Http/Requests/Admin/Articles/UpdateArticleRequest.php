@@ -22,10 +22,12 @@ class UpdateArticleRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'isActive' => ['required', 'boolean'],
             'category_id' => ['required', 'exists:categories,id'],
             'translations' => ['required', 'array'],
             'translations.*.title' => ['required', 'string'],
             'translations.*.content' => ['required', 'string'],
+            'translations.*.description' => ['nullable', 'string'],
             'translations.*.slug' => ['required', 'string'],
         ];
     }

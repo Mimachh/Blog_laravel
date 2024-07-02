@@ -4,163 +4,164 @@
 
 @layer base {
     :root {
-        --background: 0 0% 100%;
-        --foreground: 0 0% 3.9%;
-
-        --card: 0 0% 100%;
-        --card-foreground: 0 0% 3.9%;
-
-        --popover: 0 0% 100%;
-        --popover-foreground: 0 0% 3.9%;
-
-        --primary: 0 0% 9%;
-        --primary-foreground: 0 0% 98%;
-
-        --secondary: 0 0% 96.1%;
-        --secondary-foreground: 0 0% 9%;
-
-        --muted: 0 0% 96.1%;
-        --muted-foreground: 0 0% 45.1%;
-
-        --accent: 0 0% 96.1%;
-        --accent-foreground: 0 0% 9%;
-
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
-
-        --border: 0 0% 89.8%;
-        --input: 0 0% 89.8%;
-        --ring: 0 0% 3.9%;
-
-        --radius: 0.5rem;
+      --background: 235 0% 96.15%;
+      --foreground: 0 0% 17.65%;
+      --muted: 235 0% 100%;
+      --muted-foreground: 250 5.5% 42.75%;
+      --popover: 235 0% 100%;
+      --popover-foreground: 0 0% 17.65%;
+      --card: 235 0% 100%;
+      --card-foreground: 0 0% 17.65%;
+      --border: 235 0% 63.08%;
+      --input: 0 0% 63.14%;
+      --primary: 114.81 100% 84.12%;
+      --primary-foreground: 0 0% 17.65%;
+      --secondary: 187.41 100% 84.12%;
+      --secondary-foreground: 0 0% 17.65%;
+      --accent: 64.44 100% 84.12%;
+      --accent-foreground: 0 0% 17.65%;
+      --destructive: 347.53 100% 60.42%;
+      --destructive-foreground: 0 0% 100%;
+      --ring: 186.94 100% 52.55%;
+      --radius: 0.5rem;
     }
-
+  
     .dark {
-        --background: 0 0% 3.9%;
-        --foreground: 0 0% 98%;
-
-        --card: 0 0% 3.9%;
-        --card-foreground: 0 0% 98%;
-
-        --popover: 0 0% 3.9%;
-        --popover-foreground: 0 0% 98%;
-
-        --primary: 0 0% 98%;
-        --primary-foreground: 0 0% 9%;
-
-        --secondary: 0 0% 14.9%;
-        --secondary-foreground: 0 0% 98%;
-
-        --muted: 0 0% 14.9%;
-        --muted-foreground: 0 0% 63.9%;
-
-        --accent: 0 0% 14.9%;
-        --accent-foreground: 0 0% 98%;
-
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
-
-        --border: 0 0% 14.9%;
-        --input: 0 0% 14.9%;
-        --ring: 0 0% 83.1%;
+      --background: 0 0% 10%;
+      --foreground: 0 0% 90%;
+      --muted: 0 0% 20%;
+      --muted-foreground: 0 0% 70%;
+      --popover: 0 0% 15%;
+      --popover-foreground: 0 0% 85%;
+      --card: 0 0% 15%;
+      --card-foreground: 0 0% 85%;
+      --border: 0 0% 30%;
+      --input: 0 0% 25%;
+      --primary: 114.81 100% 70%;
+      --primary-foreground: 0 0% 10%;
+      --secondary: 187.41 100% 70%;
+      --secondary-foreground: 0 0% 10%;
+      --accent: 64.44 100% 70%;
+      --accent-foreground: 0 0% 10%;
+      --destructive: 347.53 100% 60%;
+      --destructive-foreground: 0 0% 90%;
+      --ring: 186.94 100% 40%;
     }
-}
+  }
 
- @layer base {
+@layer base {
     * {
         @apply border-border;
     }
     body {
         @apply bg-background text-foreground;
     }
-   
+}
+
+/* List styles */
+.tiptap {
+    @apply focus-within:outline-none min-h-[150px] px-4;
+}
+
+.tiptap:first-child {
+    @apply mt-4;
+}
+
+.tiptap ul {
+    list-style-type: disc;
+}
+
+.tiptap ol {
+    list-style-type: decimal;
+}
+
+.tiptap ul,
+.tiptap ol {
+    padding: 0 1rem;
+    margin: 1.25rem 1rem 1.25rem 0.4rem;
+}
+button.is-active {
+    @apply bg-background text-primary;
+}
+.tiptap ul li p,
+.tiptap ol li p {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+/* Heading styles */
+.tiptap h1,
+.tiptap h2,
+.tiptap h3,
+.tiptap h4,
+.tiptap h5,
+.tiptap h6 {
+    line-height: 1.1;
+    margin-top: 2.5rem;
+    word-wrap: break-word;
+}
+
+.tiptap h1,
+.tiptap h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tiptap h1 {
+    @apply text-2xl font-bold;
+}
+
+.tiptap h2 {
+    @apply text-xl font-bold;
+}
+
+.tiptap h3 {
+    font-size: 1.1rem;
+}
+
+.tiptap h4,
+.tiptap h5,
+.tiptap h6 {
+    font-size: 1rem;
+}
+
+/* Code and preformatted text styles */
+.tiptap code {
+    @apply bg-neutral-500 text-foreground p-2 rounded-md overflow-y-auto text-sm;
+}
+
+.tiptap pre {
+    @apply bg-neutral-900 text-background/80 p-5 rounded-md overflow-y-auto text-sm;
+    font-family: "JetBrainsMono", monospace;
+}
+
+.tiptap pre code {
+    @apply bg-transparent text-inherit p-0 text-sm overflow-y-auto;
+}
+
+/* Blockquote styles */
+.tiptap blockquote {
+    border-left: 3px solid gray;
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+}
+
+/* Horizontal rule styles */
+.tiptap hr {
+    border: none;
+    border-top: 1px solid gray;
+    margin: 2rem 0;
 }
 
 
- /* List styles */
- .tiptap {
-  @apply focus-within:outline-none min-h-[150px] px-4
- }
 
- .tiptap:first-child {
-     @apply mt-4
- }
+@keyframes scroll-watcher {
+    to {scale: 1 1; }
+}
 
- .tiptap ul,
- .tiptap ol {
-     padding: 0 1rem;
-     margin: 1.25rem 1rem 1.25rem 0.4rem;
- }
- button.is-active {
-      @apply bg-background text-primary;
- }
- .tiptap ul li p,
- .tiptap ol li p {
-     margin-top: 0.25em;
-     margin-bottom: 0.25em;
- }
-
- /* Heading styles */
- .tiptap h1,
- .tiptap h2,
- .tiptap h3,
- .tiptap h4,
- .tiptap h5,
- .tiptap h6 {
-     line-height: 1.1;
-     margin-top: 2.5rem;
-     word-wrap: break-word;
-     color: red !important;
- }
-
- .tiptap h1,
- .tiptap h2 {
-     margin-top: 3.5rem;
-     margin-bottom: 1.5rem;
- }
-
- .tiptap h1 {
-     font-size: 1.4rem;
- }
-
- .tiptap h2 {
-     font-size: 1.2rem;
- }
-
- .tiptap h3 {
-     font-size: 1.1rem;
- }
-
- .tiptap h4,
- .tiptap h5,
- .tiptap h6 {
-     font-size: 1rem;
- }
-
- /* Code and preformatted text styles */
- .tiptap code {
-     @apply bg-neutral-800 text-foreground p-5 rounded-xl;
- }
-
- .tiptap pre {
-  @apply bg-neutral-800 text-background/80 p-5 rounded-xl;
-     font-family: "JetBrainsMono", monospace;
- }
-
- .tiptap pre code {
-  @apply bg-transparent text-inherit p-0 text-base
- }
-
- /* Blockquote styles */
- .tiptap blockquote {
-     border-left: 3px solid gray;
-     margin: 1.5rem 0;
-     padding-left: 1rem;
- }
-
- /* Horizontal rule styles */
- .tiptap hr {
-     border: none;
-     border-top: 1px solid gray;
-     margin: 2rem 0;
- }
+#scroll-watcher {
+    scale: 0 1;
+    transform-origin: left;
+    animation: scroll-watcher linear;
+    animation-timeline: scroll()
+}

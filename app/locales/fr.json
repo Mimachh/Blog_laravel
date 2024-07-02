@@ -1,0 +1,9 @@
+{
+    "blog_list": {
+        "title": "Liste des articles"
+    },
+
+    "date": {
+        "published_at": "Publié le {date}"
+    }
+}

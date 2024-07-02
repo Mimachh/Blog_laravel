@@ -23,6 +23,8 @@ class ArticleFactory extends Factory
             'slug' => $this->faker->slug,
             'user_id' => 1,
             'category_id' => \App\Models\Category::factory(),	
+            'isActive' => $this->faker->boolean,
+
         ];
     }
 }
