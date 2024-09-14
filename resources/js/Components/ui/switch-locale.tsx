@@ -15,13 +15,13 @@ const SwitchLocale = ({ currentLocale }: { currentLocale: string }) => {
 
     const submit = (locale: string) => {
         data.locale = locale;
-        post(route("change-locale"), {
+        post(route("fo.change-locale"), {
             onSuccess: () => {
-                window.location.reload();
+                // window.location.reload();
             },
             onError: (e) => {
-                console.log(e);
-                reset();
+                // console.log(e);
+                // reset();
             },
         });
     };

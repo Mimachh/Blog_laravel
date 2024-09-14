@@ -1,4 +1,3 @@
-import React from "react";
 import SwitchLocale from "../ui/switch-locale";
 import { Link } from "@inertiajs/react";
 import ApplicationLogo from "../ApplicationLogo";
@@ -14,9 +13,9 @@ const Desktop = (props: Props) => {
     const { tabs, localeData } = props;
 
     return (
-        <nav className="hidden md:block bg-white">
+        <nav className="hidden md:block fixed top-0 inset-x-0 z-10 bg-foreground shadow-md">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-24">
+                <div className="flex justify-between h-20">
                     <div className="flex">
                         <div className="shrink-0 flex items-center">
                             <Link href="/">
@@ -30,9 +29,9 @@ const Desktop = (props: Props) => {
                             {tabs.map((tab) => {
                                 let isActive = route().current(tab.href);
                                 
-                                if(route().current() === "articles.show") {
+                                if(route().current() === "fo.articles.show") {
                                     // Définit isActive à vrai uniquement pour 'articles.index'
-                                    isActive = tab.href === "articles.index";
+                                    isActive = tab.href === "fo.articles.index";
                                 }
                                 return (
                                     <NavLink
@@ -45,6 +44,8 @@ const Desktop = (props: Props) => {
                                 )
                             })}
                             <div className="h-full flex items-center">
+
+                        <NavLink href={route("bo.dashboard")} active={route().current("bo.dashboard")}>Admin</NavLink>
                         <SwitchLocale currentLocale={localeData.languageCode} />
                     </div>
                         </div>

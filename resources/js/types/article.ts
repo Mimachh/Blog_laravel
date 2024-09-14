@@ -10,5 +10,31 @@ export interface Article {
     slug: string;
     updated_at: string;
     category: Category;
-    user: User
+    user: User;
+}
+
+export interface EditArticle {
+    id: number;
+    title: string;
+    content: string;
+    user_id: number;
+    description: string;
+    slug: string;
+    updated_at: string;
+    category: Category;
+    user: User;
+    isActive: boolean;
+    category_id: number;
+    translation: Translation[];
+}
+
+export interface Translation {
+    [key: string]: {
+        id: number;
+        local: string;
+        title: string;
+        content: string;
+        slug: string;
+        description: string;
+    };
 }

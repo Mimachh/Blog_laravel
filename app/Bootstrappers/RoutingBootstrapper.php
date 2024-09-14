@@ -13,16 +13,20 @@ class RoutingBootstrapper
     {
         $router->middleware('web')
             ->group(base_path('routes/web.php'));
-        
+
+        $router->middleware('web')
+            ->group(base_path('routes/web-fo.php'))
+            ->group(base_path('routes/web-bo.php'));
+
         // $router->middleware('api')
         //     ->group(base_path('routes/api.php'));
-        
+
         $router->middleware('web')
-            ->group(base_path('routes/console.php'));  
+            ->group(base_path('routes/console.php'));
 
         // $router->middleware('web')
         //     ->group(base_path('routes/channels.php'));
-        
+
         $router->middleware('web')
             ->get('/up', function () {
                 Event::dispatch(new DiagnosingHealth);

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Articles\UpdateArticleRequest;
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class UpdateArticleController extends Controller
 {
@@ -14,6 +15,7 @@ class UpdateArticleController extends Controller
      */
     public function __invoke(UpdateArticleRequest $request, Article $article)
     {
+        Gate::authorize('update', $article);
         $data = $request->validated();
 
         $user = auth()->user();

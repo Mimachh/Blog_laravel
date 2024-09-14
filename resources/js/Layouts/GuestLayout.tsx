@@ -1,19 +1,33 @@
-import ApplicationLogo from '@/Components/ApplicationLogo';
-import { Link } from '@inertiajs/react';
-import { PropsWithChildren } from 'react';
 
-export default function Guest({ children }: PropsWithChildren) {
+import { PropsWithChildren } from "react";
+
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from "@/Components/ui/card";
+import ToastProvider from "@/providers/ToastProvider";
+
+type Props = PropsWithChildren & {
+    title: string;
+    description?: string;
+    children: React.ReactNode;
+}
+
+export default function Guest({ children, title, description }: Props) {
     return (
-        <div className="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
-                <Link href="/">
-                    <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
-                </Link>
+        <ToastProvider>
+            <div className="min-h-screen flex items-center justify-center bg-secondary">
+                <Card className="w-full max-w-sm">
+                    <CardHeader>
+                        <CardTitle className="text-2xl text-center">{title}</CardTitle>
+                        {description && (<CardDescription>{description}</CardDescription>)}
+                    </CardHeader>
+                    <CardContent className="grid gap-4">{children}</CardContent>
+                </Card>
             </div>
-
-            <div className="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-                {children}
-            </div>
-        </div>
+        </ToastProvider>
     );
 }

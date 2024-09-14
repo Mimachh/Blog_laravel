@@ -2,7 +2,6 @@
 
 namespace App\Bootstrappers;
 
-use App\Http\Middleware\AbortIfNotSuperAdmin;
 use Illuminate\Foundation\Configuration\Middleware;
 
 class MiddlewareBootstrapper
@@ -17,7 +16,7 @@ class MiddlewareBootstrapper
         ]);
 
         $middleware->alias([
-            'super.admin' => AbortIfNotSuperAdmin::class,
+          
         ]);
     }
 }

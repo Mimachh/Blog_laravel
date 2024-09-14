@@ -11,7 +11,7 @@ class StoreArticleRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth()->user()->isSuperAdmin();
+        return true;
     }
 
     public function rules(): array
@@ -23,7 +23,6 @@ class StoreArticleRequest extends FormRequest
             'translations.*.title' => ['nullable', 'string'],
             'translations.*.content' => ['nullable', 'string'],
             'translations.*.description' => ['nullable', 'string'],
-            'translations.*.slug' => ['nullable', 'string', 'unique:article_translations,slug'],
         ];
     }
 }

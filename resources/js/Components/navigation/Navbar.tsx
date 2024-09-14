@@ -1,11 +1,5 @@
-import { Link, usePage } from "@inertiajs/react";
-import React, { useState } from "react";
-import ApplicationLogo from "../ApplicationLogo";
-import NavLink from "../NavLink";
-import ResponsiveNavLink from "../ResponsiveNavLink";
+import { usePage } from "@inertiajs/react";
 import { User } from "@/types";
-import Dropdown from "../Dropdown";
-import SwitchLocale from "../ui/switch-locale";
 import { LocaleData } from "@/types/locale";
 import Mobile from "./Mobile";
 import Desktop from "./Desktop";
@@ -21,7 +15,7 @@ const Navbar = (props: NavbarProps) => {
     // const { data } = localeData;
     const tabs = [
         { href: "home", label: "Accueil" },
-        { href: "articles.index", label: "Articles" },
+        { href: "fo.articles.index", label: "Articles" },
     ];
 
     return (

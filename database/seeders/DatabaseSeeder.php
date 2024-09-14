@@ -3,10 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
-use App\Models\Role;
+
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Mimachh\Guardians\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,21 +17,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-
-        Role::factory(3)->sequence(
-            [
-                'name' => 'Super Admin',
-                'slug' => 'super_admin'
-            ],
-            [
-                'name' => 'Admin',
-                'slug' => 'admin'
-            ],
-            [
-                'name' => 'User',
-                'slug' => 'user'
-            ]
-        )->create();
 
         $user = User::factory()->create(
             [

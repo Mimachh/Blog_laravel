@@ -5,8 +5,10 @@ namespace Tests\Feature\Article;
 
 use App\Models\ArticleTranslation;
 use App\Models\Category;
-use App\Models\Role;
 use App\Models\User;
+use Mimachh\Guardians\Models\Role as ModelsRole;
+use Mimachh\Guardians\Role;
+
 use function Pest\Laravel\{actingAs};
 
 use function Pest\Laravel\post;
@@ -39,7 +41,7 @@ it('can not create article if not super admin', function () {
 });
 
 it('can create article', function () {
-    Role::factory(3)->sequence(
+    ModelsRole::factory(3)->sequence(
         [
             'name' => 'Super Admin',
             'slug' => 'super_admin'
@@ -70,7 +72,7 @@ it('can create article', function () {
 
     $category = Category::factory()->create();
     
-    $response = actingAs($user)->post(route('articles.store'), [
+    $response = actingAs($user)->post(route('bo.articles.store'), [
             'category_id' => $category->id,
             'translations' => [
                 'en' => [
@@ -103,7 +105,7 @@ it('can not create article if not auth', function () {
 
     $category = Category::factory()->create();
     
-    $response = post(route('articles.store'), [
+    $response = post(route('bo.articles.store'), [
             'category_id' => $category->id,
             'translations' => [
                 'en' => [

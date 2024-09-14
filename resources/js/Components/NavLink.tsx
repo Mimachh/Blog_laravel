@@ -7,7 +7,7 @@ export default function NavLink({ active = false, className = '', children, ...p
             className={
                 'relative inline-flex items-center px-3 text-sm font-medium leading-5 transition duration-150 ease-in-out focus:outline-none ' +
                 (active
-                    ? 'text-neutral-950'
+                    ? 'text-primary'
                     : ' text-neutral-400') +
                 className
             }

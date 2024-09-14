@@ -7,8 +7,10 @@ namespace Tests\Feature\Article;
 use App\Models\Article;
 use App\Models\ArticleTranslation;
 use App\Models\Category;
-use App\Models\Role;
 use App\Models\User;
+use Database\Factories\RoleFactory;
+use Mimachh\Guardians\Database\Factories\RoleFactory as FactoriesRoleFactory;
+use Mimachh\Guardians\Models\Role;
 
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\post;
@@ -26,7 +28,7 @@ it('can not update article if not super admin', function () {
     ])->create();
 
 
-    $response = actingAs($user)->put(route('articles.update', $article->id), [
+    $response = actingAs($user)->put(route('bo.articles.update', $article->id), [
         'category_id' => $category->id,
         'translations' => [
             'en' => [
@@ -94,7 +96,7 @@ it('can update article', function () {
     ])->create();
 
 
-    $response = actingAs($user)->put(route('articles.update', $article->id), [
+    $response = actingAs($user)->put(route('bo.articles.update', $article->id), [
         'category_id' => $category->id,
         'translations' => [
             'en' => [
@@ -135,7 +137,7 @@ it('can not update article if not auth', function () {
     ])->create();
 
 
-    $response = put(route('articles.update', $article->id), [
+    $response = put(route('bo.articles.update', $article->id), [
         'category_id' => $category->id,
         'translations' => [
             'en' => [

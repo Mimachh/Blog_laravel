@@ -78,7 +78,7 @@ const Create = (props: Props) => {
             translations: cleanedTranslations,
         };
 
-        axios.post(route("articles.store"), cleanedData).then((response) => {
+        axios.post(route("bo.articles.store"), cleanedData).then((response) => {
             console.log(response);
         });
         // post(route("articles.store"), {
